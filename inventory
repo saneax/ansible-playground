@@ -1,0 +1,6 @@
+[servers]
+control
+lb01
+app01
+app02
+db01
