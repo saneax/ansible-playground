@@ -1,0 +1,39 @@
+version: '2'
+services:
+  server1.control:
+    image: ubuntu-ssh
+    hostname: control
+    ports:
+      - "2224:22"
+      - "8081:8080"
+
+  server2.lb01:
+    image: ubuntu-ssh
+    hostname: lb01
+    ports:
+      - "2225:22"
+      - "8082:8080"
+
+  server3.app01:
+    image: ubuntu-ssh
+    hostname: app01
+    ports:
+      - "2226:22"
+      - "8083:8080"
+
+  server3.app02:
+    image: ubuntu-ssh
+    hostname: app02
+    ports:
+      - "2227:22"
+      - "8084:8080"
+
+  server3.db01:
+    image: ubuntu-ssh
+    hostname: db01
+    ports:
+      - "2228:22"
+      - "8085:8080"
+
+
+
