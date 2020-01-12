@@ -3,6 +3,8 @@ services:
   server1.control:
     image: ubuntu-ssh
     hostname: control
+    volumes:
+      - ansible:/root/ansible
     ports:
       - "2224:22"
       - "8081:8080"
@@ -35,5 +37,7 @@ services:
       - "2228:22"
       - "8085:8080"
 
+volumes:
+  ansible:
 
 
