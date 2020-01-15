@@ -1,0 +1,14 @@
+---
+- hosts: loadbalancer
+  become: true
+  tasks:
+    - name: install nginx
+      apt: name={{item}} state=present update_cache=yes
+      with_items:
+          - sudo
+          - nginx
+    - name: ensure nginx is started
+      service:
+          name: nginx
+          state: started
+          enable: yes

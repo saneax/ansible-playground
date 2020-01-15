@@ -14,7 +14,7 @@ services:
     hostname: lb01
     ports:
       - "2225:22"
-      - "8082:8080"
+      - "8082:80"
 
   server3.app01:
     image: ubuntu-ssh
