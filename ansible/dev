@@ -9,4 +9,7 @@ app02
 db01
 
 [control]
-control
+control01
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3

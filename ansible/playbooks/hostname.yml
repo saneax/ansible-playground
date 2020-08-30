@@ -1,5 +1,13 @@
 ---
-  - hosts: all
-    tasks:
-      - name: get server hostname
-        command: hostname
+- hosts: all
+  tasks:
+    - name: get server hostname
+      command: hostname
+
+    - name: install python3
+      package: name={{item}} state=present update_cache=yes
+      with_items:
+        - python3.7
+        - python3-pip
+        - python
+        - python-pip
