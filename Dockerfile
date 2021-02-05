@@ -3,7 +3,7 @@ FROM centos
 RUN dnf update -y && \
     dnf install -y epel-release && \
     dnf install -y python3 openssh openssh-server pwgen \
-    nmap-ncat net-tools curl wget vim && \
+    nmap-ncat net-tools curl wget vim git && \
     dnf clean all
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
