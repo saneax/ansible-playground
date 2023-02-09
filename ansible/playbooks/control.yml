@@ -1,8 +1,10 @@
 ---
-- hosts: control
+- name: install packages into control machine
+  hosts: control
   tasks:
     - name: install tools
-      apt: name={{item}} state=present update_cache=yes
+      dnf: name={{item}} state=present update_cache=yes
       with_items:
         - curl
+        - stress
       
