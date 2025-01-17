@@ -19,13 +19,13 @@ podman build -t fedora-ssh .
 install podman-compose via pip or dnf first.
 then run the compose 
 ```
-podman-compose run -d'
+podman-compose up -d'
 cd ansible 
 ssh -i ./id_rsa -p 2224 root@localhost
 ```
 
 ## Check IP address from the running podman and populate ssh.config file
-`podman ps -a --format "{{.ID}}" | xargs -I {} podman exec -it {} ifconfig`
+`podman ps --format "{{.ID}}" | xargs -I {} podman exec -it {} ifconfig`
 
 
 ## install ansible

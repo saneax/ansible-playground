@@ -6,7 +6,7 @@ RUN dnf update -y && \
   sudo dnf clean all
 
 RUN ln -sf /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
-RUN mkdir /var/run/sshd
+#RUN mkdir /var/run/sshd
 
 RUN echo 'root:12345678' | chpasswd
 #RUN sudo chattr -ia /etc/ssh/sshd_config
@@ -17,7 +17,7 @@ RUN sed -E 's/session[[:space:]]+required[[:space:]]+pam_loginuid.so/session opt
   -i /etc/pam.d/sshd
 RUN ssh-keygen -A
 
-RUN mkdir /root/.ssh
+# RUN mkdir /root/.ssh
 copy id_rsa /root/.ssh/id_rsa
 COPY id_rsa.pub /root/.ssh/authorized_keys
 RUN chmod 400 /root/.ssh/id_rsa
